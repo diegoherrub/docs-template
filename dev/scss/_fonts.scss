@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+@use "colors";
+
+@font-face {
+  font-family: "fira";
+  src: url("fonts/FiraCode-Regular.ttf") format("truetype");
+}
+
+$lineheight: 1.7;
+
+@mixin mxfont($ffamily, $size) {
+  font-family: $ffamily;
+  font-size: $size;
+  line-height: $size * $lineheight;
+  color: colors.$cblack;
+}
+
+@mixin mxbutton($textColor) {
+  margin: 0 0 (3vh * $lineheight) 0;
+  padding: (1vw * $lineheight) 1vh;
+  border: 3px solid colors.$cblack;
+  border-radius: 2vw;
+  color: $textColor !important;
+  text-align: center;
+  background-color: colors.$cwhite;
+  cursor: pointer;
+}
+
+h1, .h1 {
+  @include mxfont("fira", 2.5rem);
+  margin: (2.5rem * $lineheight) 0 (2.5rem * $lineheight) 0;
+  width: 100%;
+  color: colors.$cblack;
+}
+
+h2, .h2 {
+  @include mxfont("fira", 2rem);
+  margin: (2rem * $lineheight) 0 (2rem * $lineheight) 0;
+  width: 100%;
+  color: colors.$caqua;
+}
+
+p, a, .button {
+  @include mxfont("fira", 1.6rem);
+}

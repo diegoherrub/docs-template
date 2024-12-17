@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+@use "colors";
+@use "fonts";
+
+html {
+  font-size: 62.5%;
+  color: colors.$cblack;
+  background-color: colors.$cwhite;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+section {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  gap: 5rem;
+
+  #imgMessage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    img {
+      width: 50%;
+    }
+
+    #message {
+      align-items: center;
+      @include fonts.mxfont('rbt-bo', 2.5rem);
+      text-align: center;
+    }
+  }
+
+  #buttonsBlock {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 3rem;
+    justify-content: space-between;
+    align-items: center;
+
+    .errorButton {
+      border: 0.3rem solid colors.$cblack;
+      border-radius: 1rem;
+      padding: 0.5vh 1vw;
+      display: flex;
+      flex-grow: 1; // da el mismo ancho a todos los campos dentro del bloque
+      gap: 0.6rem;
+      @include fonts.mxfont('fira-rg', 2.3rem);
+      color: colors.$cblack;
+      background-color: colors.$cwhite;
+
+      span {
+        @include fonts.mxfontc('FontAwesome', 2.3rem);
+      }
+
+      &:hover {
+        cursor: pointer;
+        border-color: colors.$cblack;
+        color: colors.$cwhite;
+        background-color: colors.$cblack;
+      }
+    }
+  }
+}

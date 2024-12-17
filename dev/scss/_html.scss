@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@use "colors";
+@use "fonts";
+
+html{
+  @include fonts.mxfont ("rbt-rg", 62.5%);
+  background-color: colors.$cwhite;
+}
+
+
+

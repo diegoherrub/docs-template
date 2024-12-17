@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+@use "colors";
+
+.button {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  color: colors.$cwhite;
+  background-color: colors.$cblack;
+  cursor: pointer;
+  &:hover {
+    color: colors.$caqua;
+  }
+}
